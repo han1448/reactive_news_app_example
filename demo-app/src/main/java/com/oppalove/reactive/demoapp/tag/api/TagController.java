@@ -55,6 +55,7 @@ public class TagController {
                     .filter(id -> tagMap.containsKey(id))
                     .map(id -> tagMap.get(id))
                     .collect(Collectors.toList());
+            // delay for the test
             return Flux.fromIterable(tags).delayElements(Duration.ofMillis(10));
         } else {
             return Flux.empty();

@@ -59,6 +59,7 @@ public class MediaController {
                     .filter(id -> mediumMap.containsKey(id))
                     .map(id -> mediumMap.get(id))
                     .collect(Collectors.toList());
+            // delay for the test
             return Flux.fromIterable(media).delayElements(Duration.ofMillis(10));
         } else {
             return Flux.empty();

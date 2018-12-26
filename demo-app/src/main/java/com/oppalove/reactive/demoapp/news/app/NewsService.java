@@ -45,6 +45,7 @@ public class NewsService {
     private final MediaClient mediaClient;
     private final TagClient tagClient;
 
+    // This method will do same work as findNewsZipWith()
     public Flux<NewsResponse> findNewsWithArray() {
 
         Flux<NewsFeed> feedFlux = Optional.of(newsFeedMap.values())
